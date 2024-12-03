@@ -48,7 +48,7 @@ header {
 
 /* Inhalt-Abschnitt-Styles */
 .content {
-  margin-top: 10vh; /* Platz für die fixe Header-Leiste */
+  margin-top: 12vh; /* Platz für die fixe Header-Leiste */
   padding: 20px;
 }
 
