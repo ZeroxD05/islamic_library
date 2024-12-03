@@ -8,52 +8,50 @@ body {
 
 header {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  padding: 10px;
+  justify-content: space-between;
+  padding: 10px 20px;
   background-color: #003366; /* Dunkleres Blau für Header */
   position: fixed;
   width: 100%;
   top: 0;
   z-index: 10;
+  height: 60px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 #logo {
   font-size: 20px;
   font-weight: bold;
-  margin-bottom: 5px;
 }
 
 #categories {
   display: flex;
-  justify-content: center;
-  gap: 15px;
+  gap: 20px;
 }
 
 #categories a {
   color: white;
   text-decoration: none;
-  padding: 8px;
+  padding: 10px 15px;
   font-size: 16px;
+  border-radius: 5px;
 }
 
 #categories a:hover {
   background-color: #00509e; /* Hover-Effekt */
-  border-radius: 5px;
 }
 
 #search {
-  margin-top: 10px;
   padding: 8px;
   font-size: 16px;
-  width: 80%;
-  max-width: 400px;
+  width: 200px;
   border-radius: 5px;
 }
 
 /* Inhalt-Abschnitt-Styles */
 .content {
-  margin-top: 150px; /* Platz für den Header schaffen */
+  margin-top: 70px; /* Platz für die fixe Header-Leiste */
   padding: 20px;
 }
 
@@ -70,10 +68,16 @@ header {
 /* Responsivität */
 @media (max-width: 768px) {
   #categories {
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
+    gap: 10px;
   }
 
   #search {
     width: 100%;
+  }
+
+  header {
+    flex-wrap: wrap;
+    height: auto;
   }
 }
