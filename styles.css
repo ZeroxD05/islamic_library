@@ -1,0 +1,76 @@
+/* Allgemeine Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: royalblue; /* Royal Blau */
+    color: white;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #003366; /* Dunkleres Blau für Header */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 10;
+}
+
+#logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#categories a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    font-size: 18px;
+}
+
+#categories a:hover {
+    background-color: #00509e; /* Hover-Effekt */
+    border-radius: 5px;
+}
+
+#search {
+    padding: 8px;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+/* Inhalt-Abschnitt-Styles */
+.content {
+    margin-top: 80px; /* Platz für den Header schaffen */
+    padding: 20px;
+}
+
+.content h2 {
+    font-size: 28px;
+    color: white;
+}
+
+.content p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* Responsivität */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #categories {
+        display: flex;
+        flex-direction: column;
+        margin-top: 10px;
+    }
+
+    #categories a {
+        margin-bottom: 10px;
+    }
+}
