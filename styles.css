@@ -7,6 +7,7 @@ body {
   font-family: "Roboto", Arial, sans-serif; /* Neue Schriftart hinzugefügt */
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 header {
@@ -51,19 +52,23 @@ header {
 } */
 
 /* Inhalt-Abschnitt-Styles */
+/* Inhalt-Abschnitt-Styles */
 .content {
   margin-top: 12vh; /* Platz für die fixe Header-Leiste */
   padding: 20px;
+  box-sizing: border-box;
 }
 
 .content h2 {
   font-size: 28px;
   color: white;
+  margin-bottom: 10px;
 }
 
 .content p {
   font-size: 18px;
   line-height: 1.6;
+  color: white; /* Einheitliche Textfarbe */
 }
 
 .canvas-container {
@@ -75,16 +80,17 @@ header {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   padding: 20px;
   width: 80%;
-  margin-top: 20px;
+  margin: 20px auto; /* Zentrierte Platzierung */
+  margin-bottom: -15vh; /* Zentrierte Platzierung */
   box-sizing: border-box;
-  margin-top: 15vh;
-  color: #555;
+  color: #555; /* Kontrast für Canvas-Inhalt */
+  margin-top: 18vh;
 }
 
 .canvas-container h1 {
   font-size: 1.8rem;
   margin-bottom: 15px;
-  color: #555;
+  color: #333; /* Etwas dunkler für besseren Kontrast */
 }
 
 .hadith-text {
@@ -99,7 +105,7 @@ header {
 .hadith-source {
   font-size: 1rem;
   margin-top: 10px;
-  color: #888;
+  color: #666; /* Einheitlicher Kontrast */
 }
 
 /* Responsivität */
@@ -109,12 +115,16 @@ header {
     gap: 10px;
   }
 
-  #search {
-    width: 100%;
+  #categories a {
+    padding: 8px 10px; /* Kleinere Abstände für mobile Ansicht */
   }
 
   header {
     flex-wrap: wrap;
     height: auto;
+  }
+
+  .canvas-container {
+    width: 95%; /* Mehr Platz auf kleineren Geräten */
   }
 }
