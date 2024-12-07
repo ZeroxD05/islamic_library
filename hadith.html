@@ -16,256 +16,81 @@
   </head>
   <body>
     <!-- Header mit Navigation -->
+
     <header id="header">
       <div id="logo">Islamic Library</div>
+
       <div id="categories">
         <a href="index.html">Islam</a>
         <a href="hadith.html">Hadith</a>
         <a href="aqeedah.html">Aqidah</a>
         <a href="fiqh.html">Fiqh</a>
         <a href="seerah.html">Sirah</a>
-        <a href="#" id="quiz-lock" onclick="openQuiz()">🔒</a>
       </div>
     </header>
     <div class="content">
-      <h2>Grundlagen des Islam</h2>
-      <p>Eine Einführung in die fundamentalen Prinzipien des Islam.</p>
-
-      <!-- Canvas: Säulen des Islam -->
-      <div class="canvas-container" style="margin-top: 5vh">
-        <h1>Die Säulen des Islam</h1>
-        <p>
-          Schahada (Glaubensbekenntnis): <br />(2:255, 21:25)<br />
-          Salah (Gebet): <br />
-          (2:43, 11:114)<br />
-          Zakat (Spenden): <br />
-          (2:43, 9:103)<br />
-          Saum (Fasten): <br />
-          (2:183, 2:185)<br />
-          Hajj (Pilgerfahrt): <br />
-          (3:97)
-        </p>
-        <p>
-          Die fünf Säulen des Islams müssen eingehalten werden. Es gibt jedoch
-          Ausnahmen, wenn man keine Möglichkeit auf die Spenden/Hajj hat oder
-          aufgrund von Krankheit nicht fasten kann. Dann sollte man individuell
-          nach Antworten im Internet/Sheikh oder beim lokalen Imam suchen.
-        </p>
-      </div>
-
-      <!-- Canvas: Iman -->
-      <div class="canvas-container">
-        <h1>Iman (Glaube)</h1>
-        <p>
-          Die sechs Säulen des Iman: Glaube an Allah, Seine Engel, Seine Bücher,
-          Seine Gesandten, den Jüngsten Tag, die Vorherbestimmung.
-        </p>
-      </div>
-
-      <!-- Canvas: Ihsan -->
-      <div class="canvas-container">
-        <h1>Ihsan (Exzellenz)</h1>
-        <p>
-          Ihsan bedeutet, Allah zu dienen, als ob man Ihn sieht, ohne sich Ihn
-          vorzustellen. Es ist die höchste Stufe der Anbetung.
-        </p>
-      </div>
-
-      <!-- Canvas: Propheten -->
-      <div class="canvas-container">
-        <h1>Die Propheten</h1>
-        <h4>
-          Im Quran wurden 25 erwähnt, jedoch wurde ein Prophet zu jedem Volk
-          geschickt
-        </h4>
-        <ul>
-          <li>Adam (AS)</li>
-          <li>Idris (AS)</li>
-          <li>Nuh (AS)</li>
-          <li>Hud (AS)</li>
-          <li>Salih (AS)</li>
-          <li>Ibrahim (AS)</li>
-          <li>Lut (AS)</li>
-          <li>Ismail (AS)</li>
-          <li>Ishaq (AS)</li>
-          <li>Yaqub (AS)</li>
-          <li>Yusuf (AS)</li>
-          <li>Shuʿayb (AS)</li>
-          <li>Ayyub (AS)</li>
-          <li>Dhu-l-Kifl (AS)</li>
-          <li>Musa (AS)</li>
-          <li>Harun (AS)</li>
-          <li>Dawud (AS)</li>
-          <li>Sulaiman (AS)</li>
-          <li>Ilyas (AS)</li>
-          <li>Al-Yasaʿ (AS)</li>
-          <li>Yunus (AS)</li>
-          <li>Zakariya (AS)</li>
-          <li>Yahya (AS)</li>
-          <li>ʿIsa (AS)</li>
-          <li>Muhammad (SAW)</li>
-        </ul>
-
-        <h4>
-          ~ Surah An-Nahl (16:36):
-          <br />
-          „Und wahrlich, Wir haben in jede Gemeinschaft einen Gesandten
-          geschickt (der da rief): 'Dient Allah und meidet den Tāghūt.' …“
-        </h4>
-      </div>
-
-      <!-- Canvas: Tauhid -->
-      <div class="canvas-container">
-        <h1>Tauhid (Einheit Allahs)</h1>
-        <p>
-          Tauhid ist der Glaube an die Einheit Allahs in Seiner Herrschaft,
-          Seinen Namen und Eigenschaften sowie Seiner Anbetung.
-        </p>
-      </div>
-
-      <!-- Canvas: Bücher -->
-      <div class="canvas-container">
-        <h1>Nützliche Bücher</h1>
-        <h3>Ließt Bücher immer mit Lehrer oder Videos!</h3>
-        <ul class="book-links">
-          <li>
-            <a
-              href="https://d1.islamhouse.com/data/de/ih_books/single/de_Al-Aqida_Al-Wasitiyyah.pdf"
-              target="_blank"
-              >AL-AQIDA AL-WASITIYYAH</a
-            >
-          </li>
-          <li>
-            <a
-              href="https://d1.islamhouse.com/data/de/ih_books/single/de_the_principles_of_sunnah.pdf"
-              target="_blank"
-              >USOOL AS SUNNAH</a
-            >
-          </li>
-          <li>
-            <a
-              href="https://qaryah.wordpress.com/wp-content/uploads/2011/11/class_3usool.pdf"
-              target="_blank"
-              >USOOL AT THALATHA</a
-            >
-          </li>
-        </ul>
-      </div>
-
-      <!-- Quiz Modal -->
-      <div id="quiz-modal" class="modal">
-        <div class="modal-content">
-          <span class="close-btn" onclick="closeQuiz()">&times;</span>
-          <h2>Islam Quiz</h2>
+      <!-- Einleitung -->
+      <section>
+        <div style="margin-bottom: -12vh">
+          <h2>Hadith</h2>
           <p>
-            Beantworte mindestens 4 Fragen richtig, um den Zugang
-            freizuschalten.
+            Hadithe sind Überlieferungen über das Leben und die Aussagen des
+            Propheten Muhammad ﷺ, eine zentrale Quelle im Islam neben dem Koran.
           </p>
-          <form id="quiz-form">
-            <div class="quiz-question">
-              <p>1. Wer ist der letzte Prophet im Islam?</p>
-              <input type="radio" name="q1" value="richtig" /> Muhammad (SAW)
-              <input type="radio" name="q1" value="falsch" /> Ibrahim (AS)
-            </div>
-            <div class="quiz-question">
-              <p>2. Wie viele Säulen hat der Islam?</p>
-              <input type="radio" name="q2" value="richtig" /> 5
-              <input type="radio" name="q2" value="falsch" /> 7
-            </div>
-            <div class="quiz-question">
-              <p>3. Was bedeutet Tauhid?</p>
-              <input type="radio" name="q3" value="richtig" /> Die Einheit
-              Allahs <input type="radio" name="q3" value="falsch" /> Die
-              Bedeutung des Gebets
-            </div>
-            <div class="quiz-question">
-              <p>4. Wie viele Propheten werden im Quran erwähnt?</p>
-              <input type="radio" name="q4" value="richtig" /> 25
-              <input type="radio" name="q4" value="falsch" /> 30
-            </div>
-            <div class="quiz-question">
-              <p>5. Was ist Iman?</p>
-              <input type="radio" name="q5" value="richtig" /> Glaube an die
-              Säulen des Islams
-              <input type="radio" name="q5" value="falsch" /> Das Fasten im
-              Ramadan
-            </div>
-            <button type="button" onclick="checkQuiz()">Absenden</button>
-          </form>
         </div>
+      </section>
+
+      <!-- Canvas-Abschnitte -->
+      <div class="canvas-container">
+        <p class="hadith-text">
+          "Die Taten werden nach den Absichten beurteilt, und jeder Mensch wird
+          nur das bekommen, was er beabsichtigt hat." (Sahih al-Bukhari)
+        </p>
+        <br />
+        <p class="hadith-source">Quelle: Sahih al-Bukhari</p>
       </div>
 
-      <!-- Quiz Ergebnis -->
-      <div id="quiz-result" class="modal">
-        <div class="modal-content">
-          <span class="close-btn" onclick="closeQuiz()">&times;</span>
-          <h2>Ergebnis</h2>
-          <p id="result-message"></p>
-          <button onclick="redirectToHomePage()">Zurück zur Startseite</button>
-        </div>
+      <!-- Canvas: Große Hadith-Sammlungen -->
+      <div class="canvas-container">
+        <h1>Die fünf großen Hadith-Sammlungen</h1>
+        <p>
+          1. Sahih al-Bukhari<br />
+          2. Sahih Muslim<br />
+          3. Sunan Abu Dawud<br />
+          4. Jami' al-Tirmidhi<br />
+          5. Sunan an-Nasa'i
+        </p>
+        <p>
+          Die Sammlungen von al-Bukhari und Muslim gelten als
+          <i>Sahihayn</i> (die zwei authentischen Sammlungen), da sie nur stark
+          geprüfte Überlieferungen enthalten.
+        </p>
       </div>
 
-      <script>
-        // Überprüfen, ob der Benutzer das Quiz bereits bestanden hat
-        if (localStorage.getItem("quizPassed") === "true") {
-          document.getElementById("quiz-lock").innerHTML = "+";
-          document.getElementById("quiz-lock").onclick = function () {
-            window.location.href = "advanced.html";
-          };
-          document.getElementById("quiz-lock").style.cursor = "pointer";
-        }
+      <!-- Canvas: Bewertung von Hadithen -->
+      <div class="canvas-container">
+        <h1>Bewertung von Hadithen</h1>
+        <p>Hadithe werden in verschiedene Kategorien eingeteilt:</p>
+        <ul>
+          <li>
+            <strong>Sahih:</strong> Authentisch, starke Überlieferungskette
+          </li>
+          <li><strong>Hasan:</strong> Gut, aber leichte Schwächen</li>
+          <li><strong>Da'if:</strong> Schwach, unsichere Überlieferung</li>
+          <li><strong>Mawdu:</strong> Falsch oder erfunden</li>
+        </ul>
+      </div>
 
-        // Funktion um das Quiz anzuzeigen
-        function openQuiz() {
-          document.getElementById("quiz-modal").style.display = "block";
-        }
-
-        // Funktion um das Quiz zu schließen
-        function closeQuiz() {
-          document.getElementById("quiz-modal").style.display = "none";
-          document.getElementById("quiz-result").style.display = "none";
-        }
-
-        // Funktion um das Quiz zu überprüfen
-        function checkQuiz() {
-          let correctAnswers = 0;
-          const form = document.forms["quiz-form"];
-
-          // Überprüfen der Antworten
-          if (form["q1"].value === "richtig") correctAnswers++;
-          if (form["q2"].value === "richtig") correctAnswers++;
-          if (form["q3"].value === "richtig") correctAnswers++;
-          if (form["q4"].value === "richtig") correctAnswers++;
-          if (form["q5"].value === "richtig") correctAnswers++;
-
-          // Ergebnis anzeigen
-          let message = "";
-          if (correctAnswers >= 4) {
-            message =
-              "Herzlichen Glückwunsch, du hast das Quiz bestanden! Der Zugang wird freigeschaltet.";
-            document.getElementById("quiz-result").style.display = "block";
-            document.getElementById("quiz-modal").style.display = "none";
-            localStorage.setItem("quizPassed", "true"); // Status speichern
-
-            // Ändern des "Quiz"-Buttons zu "Mehr" nach dem Bestehen des Quizzes
-            document.getElementById("quiz-lock").innerHTML = "+";
-            document.getElementById("quiz-lock").onclick = function () {
-              window.location.href = "advanced.html";
-            };
-          } else {
-            message =
-              "Leider nicht bestanden. Du wirst zur Startseite weitergeleitet.";
-            document.getElementById("quiz-result").style.display = "block";
-            document.getElementById("quiz-modal").style.display = "none";
-          }
-          document.getElementById("result-message").innerText = message;
-        }
-
-        // Funktion um zur Startseite weiterzuleiten, falls das Quiz nicht bestanden wurde
-        function redirectToHomePage() {
-          window.location.href = "index.html";
-        }
-      </script>
+      <!-- Canvas: Isnad -->
+      <div class="canvas-container">
+        <h1>Isnad (Überlieferungskette)</h1>
+        <p>
+          Der Isnad ist die Kette von Überlieferern, die einen Hadith
+          weitergegeben haben. Die Glaubwürdigkeit und Verbindung der
+          Überlieferer bestimmen die Stärke eines Hadiths.
+        </p>
+        <p>Beispiel: <em>Prophet ﷺ → Sahaba → Tabi'un → Muhaddith</em></p>
+      </div>
     </div>
   </body>
 </html>
