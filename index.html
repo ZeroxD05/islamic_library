@@ -23,7 +23,8 @@
         <a href="hadith.html">Hadith</a>
         <a href="aqeedah.html">Aqeedah</a>
         <a href="fiqh.html">Fiqh</a>
-        <a href="seerah.html">Seerah</a>
+        <a href="seerah.html" id="seerah-btn">Seerah</a>
+        <a href="#" id="quiz-lock" onclick="openQuiz()">🔒</a>
       </div>
     </header>
     <div class="content">
@@ -150,6 +151,121 @@
           </li>
         </ul>
       </div>
+
+      <!-- Quiz Modal -->
+      <div id="quiz-modal" class="modal">
+        <div class="modal-content">
+          <span class="close-btn" onclick="closeQuiz()">&times;</span>
+          <h2>Islam Quiz</h2>
+          <p>
+            Beantworte mindestens 4 Fragen richtig, um den Zugang
+            freizuschalten.
+          </p>
+          <form id="quiz-form">
+            <div class="quiz-question">
+              <p>1. Wer ist der letzte Prophet im Islam?</p>
+              <input type="radio" name="q1" value="richtig" /> Muhammad (SAW)
+              <input type="radio" name="q1" value="falsch" /> Ibrahim (AS)
+            </div>
+            <div class="quiz-question">
+              <p>2. Wie viele Säulen hat der Islam?</p>
+              <input type="radio" name="q2" value="richtig" /> 5
+              <input type="radio" name="q2" value="falsch" /> 7
+            </div>
+            <div class="quiz-question">
+              <p>3. Was bedeutet Tauhid?</p>
+              <input type="radio" name="q3" value="richtig" /> Die Einheit
+              Allahs <input type="radio" name="q3" value="falsch" /> Die
+              Bedeutung des Gebets
+            </div>
+            <div class="quiz-question">
+              <p>4. Wie viele Propheten werden im Quran erwähnt?</p>
+              <input type="radio" name="q4" value="richtig" /> 25
+              <input type="radio" name="q4" value="falsch" /> 30
+            </div>
+            <div class="quiz-question">
+              <p>5. Was ist Iman?</p>
+              <input type="radio" name="q5" value="richtig" /> Glaube an die
+              Säulen des Islams
+              <input type="radio" name="q5" value="falsch" /> Das Fasten im
+              Ramadan
+            </div>
+            <button type="button" onclick="checkQuiz()">Absenden</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Quiz Ergebnis -->
+      <div id="quiz-result" class="modal">
+        <div class="modal-content">
+          <span class="close-btn" onclick="closeQuiz()">&times;</span>
+          <h2>Ergebnis</h2>
+          <p id="result-message"></p>
+          <button onclick="redirectToHomePage()">Zurück zur Startseite</button>
+        </div>
+      </div>
+
+      <script>
+        // Überprüfen, ob der Benutzer das Quiz bereits bestanden hat
+        if (localStorage.getItem("quizPassed") === "true") {
+          document.getElementById("quiz-lock").innerHTML = "Mehr";
+          document.getElementById("quiz-lock").onclick = function () {
+            window.location.href = "advanced.html";
+          };
+          document.getElementById("quiz-lock").style.cursor = "pointer";
+        }
+
+        // Funktion um das Quiz anzuzeigen
+        function openQuiz() {
+          document.getElementById("quiz-modal").style.display = "block";
+        }
+
+        // Funktion um das Quiz zu schließen
+        function closeQuiz() {
+          document.getElementById("quiz-modal").style.display = "none";
+          document.getElementById("quiz-result").style.display = "none";
+        }
+
+        // Funktion um das Quiz zu überprüfen
+        function checkQuiz() {
+          let correctAnswers = 0;
+          const form = document.forms["quiz-form"];
+
+          // Überprüfen der Antworten
+          if (form["q1"].value === "richtig") correctAnswers++;
+          if (form["q2"].value === "richtig") correctAnswers++;
+          if (form["q3"].value === "richtig") correctAnswers++;
+          if (form["q4"].value === "richtig") correctAnswers++;
+          if (form["q5"].value === "richtig") correctAnswers++;
+
+          // Ergebnis anzeigen
+          let message = "";
+          if (correctAnswers >= 4) {
+            message =
+              "Herzlichen Glückwunsch, du hast das Quiz bestanden! Der Zugang wird freigeschaltet.";
+            document.getElementById("quiz-result").style.display = "block";
+            document.getElementById("quiz-modal").style.display = "none";
+            localStorage.setItem("quizPassed", "true"); // Status speichern
+
+            // Ändern des "Quiz"-Buttons zu "Mehr" nach dem Bestehen des Quizzes
+            document.getElementById("quiz-lock").innerHTML = "Mehr";
+            document.getElementById("quiz-lock").onclick = function () {
+              window.location.href = "advanced.html";
+            };
+          } else {
+            message =
+              "Leider nicht bestanden. Du wirst zur Startseite weitergeleitet.";
+            document.getElementById("quiz-result").style.display = "block";
+            document.getElementById("quiz-modal").style.display = "none";
+          }
+          document.getElementById("result-message").innerText = message;
+        }
+
+        // Funktion um zur Startseite weiterzuleiten, falls das Quiz nicht bestanden wurde
+        function redirectToHomePage() {
+          window.location.href = "index.html";
+        }
+      </script>
     </div>
   </body>
 </html>
