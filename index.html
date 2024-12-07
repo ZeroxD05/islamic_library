@@ -21,9 +21,9 @@
       <div id="categories">
         <a href="index.html">Islam</a>
         <a href="hadith.html">Hadith</a>
-        <a href="aqeedah.html">Aqeedah</a>
+        <a href="aqeedah.html">Aqidah</a>
         <a href="fiqh.html">Fiqh</a>
-        <a href="seerah.html" id="seerah-btn">Seerah</a>
+        <a href="seerah.html">Sirah</a>
         <a href="#" id="quiz-lock" onclick="openQuiz()">🔒</a>
       </div>
     </header>
@@ -208,7 +208,7 @@
       <script>
         // Überprüfen, ob der Benutzer das Quiz bereits bestanden hat
         if (localStorage.getItem("quizPassed") === "true") {
-          document.getElementById("quiz-lock").innerHTML = "Mehr";
+          document.getElementById("quiz-lock").innerHTML = "+";
           document.getElementById("quiz-lock").onclick = function () {
             window.location.href = "advanced.html";
           };
@@ -248,7 +248,7 @@
             localStorage.setItem("quizPassed", "true"); // Status speichern
 
             // Ändern des "Quiz"-Buttons zu "Mehr" nach dem Bestehen des Quizzes
-            document.getElementById("quiz-lock").innerHTML = "Mehr";
+            document.getElementById("quiz-lock").innerHTML = "+";
             document.getElementById("quiz-lock").onclick = function () {
               window.location.href = "advanced.html";
             };
