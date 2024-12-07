@@ -38,6 +38,66 @@ header {
   background-color: #00509e; /* Hover-Effekt */
 }
 
+/* Stil für das Quiz und das Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 80%;
+  height: 80%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding-top: 60px;
+}
+
+.modal-content {
+  background-color: #ffffff;
+  margin: 5% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 500px;
+  color: #000;
+}
+
+.close-btn {
+  color: #aaa;
+  font-size: 28px;
+  font-weight: bold;
+  float: right;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.quiz-question {
+  margin-bottom: 15px;
+}
+
+.quiz-question p {
+  font-size: 16px;
+}
+
+#quiz-result button {
+  background-color: #4caf50;
+  color: rgb(0, 0, 0);
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+#quiz-result button:hover {
+  background-color: #45a049;
+}
+
 #categories a {
   color: white;
   text-decoration: none;
