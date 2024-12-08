@@ -27,6 +27,7 @@
         <a href="aqeedah.html">Aqidah</a>
         <a href="fiqh.html">Fiqh</a>
         <a href="seerah.html">Sirah</a>
+        <a href="advanced.html">+</a>
       </div>
     </header>
 
@@ -53,6 +54,36 @@
           > </i
         >, oder schaut euch YouTube Videos an!
       </p>
+      <div id="warning" style="position: relative">
+        <p
+          style="
+            color: rgba(255, 0, 0, 0.774);
+            font-weight: bold;
+            margin-top: 20px;
+            background-color: rgba(0, 0, 0, 0.356);
+            padding: 8px;
+            border-radius: 20px;
+          "
+        >
+          WARNUNG, diese Sektion ist für etwas Fortgeschrittene. Geht die Themen
+          anschließend mit YouTube-Videos durch oder fragt Leute mit Wissen.
+          Diese Themen können falsch verstanden werden, deshalb achtet darauf,
+          dass ihr es gründlich durchliest und versteht, ohne Zweifel.
+        </p>
+        <span
+          id="close-warning"
+          style="
+            position: absolute;
+            top: 5px;
+            right: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            color: white;
+          "
+          >&times;</span
+        >
+      </div>
 
       <div id="tauhid-section"></div>
       <!-- Canvas: Tauhid -->
@@ -179,6 +210,19 @@
           sidebar.style.left = "-250px";
         });
       });
+
+      // Check if the warning has already been dismissed
+      if (localStorage.getItem("warningDismissed") === "true") {
+        document.getElementById("warning").style.display = "none";
+      }
+
+      // Add click event to dismiss the warning
+      document
+        .getElementById("close-warning")
+        .addEventListener("click", function () {
+          document.getElementById("warning").style.display = "none";
+          localStorage.setItem("warningDismissed", "true"); // Save the dismissal state
+        });
     </script>
   </body>
 </html>
