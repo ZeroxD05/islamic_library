@@ -224,7 +224,7 @@
         </div>
       </div>
 
-       Quiz Ergebnis 
+      Quiz Ergebnis
       <div id="quiz-result" class="modal">
         <div class="modal-content">
           <span class="close-btn" onclick="closeQuiz()">&times;</span>
@@ -232,68 +232,68 @@
           <p id="result-message"></p>
           <button onclick="redirectToHomePage()">Zurück zur Startseite</button>
         </div>
-      </div> -->
+      </div>-->
 
       <script>
         // Überprüfen, ob der Benutzer das Quiz bereits bestanden hat
-        if (localStorage.getItem("quizPassed") === "true") {
-          document.getElementById("quiz-lock").innerHTML = "+";
-          document.getElementById("quiz-lock").onclick = function () {
-            window.location.href = "advanced.html";
-          };
-          document.getElementById("quiz-lock").style.cursor = "pointer";
-        }
+        // if (localStorage.getItem("quizPassed") === "true") {
+        //  document.getElementById("quiz-lock").innerHTML = "+";
+        //  document.getElementById("quiz-lock").onclick = function () {
+        //     window.location.href = "advanced.html";
+        //   };
+        //   document.getElementById("quiz-lock").style.cursor = "pointer";
+        // }
 
         // Funktion um das Quiz anzuzeigen
-        function openQuiz() {
-          document.getElementById("quiz-modal").style.display = "block";
-        }
+        // function openQuiz() {
+        //   document.getElementById("quiz-modal").style.display = "block";
+        // }
 
         // Funktion um das Quiz zu schließen
-        function closeQuiz() {
-          document.getElementById("quiz-modal").style.display = "none";
-          document.getElementById("quiz-result").style.display = "none";
-        }
+        // function closeQuiz() {
+        //    document.getElementById("quiz-modal").style.display = "none";
+        //    document.getElementById("quiz-result").style.display = "none";
+        //  }
 
         // Funktion um das Quiz zu überprüfen
-        function checkQuiz() {
-          let correctAnswers = 0;
-          const form = document.forms["quiz-form"];
+        //  function checkQuiz() {
+        //    let correctAnswers = 0;
+        //    const form = document.forms["quiz-form"];
+        //
+        //   // Überprüfen der Antworten
+        //   if (form["q1"].value === "richtig") correctAnswers++;
+        //   if (form["q2"].value === "richtig") correctAnswers++;
+        //   if (form["q3"].value === "richtig") correctAnswers++;
+        //   if (form["q4"].value === "richtig") correctAnswers++;
+        //  if (form["q5"].value === "richtig") correctAnswers++;
 
-          // Überprüfen der Antworten
-          if (form["q1"].value === "richtig") correctAnswers++;
-          if (form["q2"].value === "richtig") correctAnswers++;
-          if (form["q3"].value === "richtig") correctAnswers++;
-          if (form["q4"].value === "richtig") correctAnswers++;
-          if (form["q5"].value === "richtig") correctAnswers++;
+        // Ergebnis anzeigen
+        // let message = "";
+        //  if (correctAnswers >= 4) {
+        //    message =
+        //      "Herzlichen Glückwunsch, du hast das Quiz bestanden! Der Zugang wird freigeschaltet.";
+        //   document.getElementById("quiz-result").style.display = "block";
+        //  document.getElementById("quiz-modal").style.display = "none";
+        ////   localStorage.setItem("quizPassed", "true"); // Status speichern
 
-          // Ergebnis anzeigen
-          let message = "";
-          if (correctAnswers >= 4) {
-            message =
-              "Herzlichen Glückwunsch, du hast das Quiz bestanden! Der Zugang wird freigeschaltet.";
-            document.getElementById("quiz-result").style.display = "block";
-            document.getElementById("quiz-modal").style.display = "none";
-            localStorage.setItem("quizPassed", "true"); // Status speichern
-
-            // Ändern des "Quiz"-Buttons zu "Mehr" nach dem Bestehen des Quizzes
-            document.getElementById("quiz-lock").innerHTML = "+";
-            document.getElementById("quiz-lock").onclick = function () {
-              window.location.href = "advanced.html";
-            };
-          } else {
-            message =
-              "Leider nicht bestanden. Du wirst zur Startseite weitergeleitet.";
-            document.getElementById("quiz-result").style.display = "block";
-            document.getElementById("quiz-modal").style.display = "none";
-          }
-          document.getElementById("result-message").innerText = message;
-        }
+        // Ändern des "Quiz"-Buttons zu "Mehr" nach dem Bestehen des Quizzes
+        // document.getElementById("quiz-lock").innerHTML = "+";
+        // document.getElementById("quiz-lock").onclick = function () {
+        //    window.location.href = "advanced.html";
+        //    };
+        //  } else {
+        //   message =
+        //     "Leider nicht bestanden. Du wirst zur Startseite weitergeleitet.";
+        //    document.getElementById("quiz-result").style.display = "block";
+        //   document.getElementById("quiz-modal").style.display = "none";
+        // }
+        //   document.getElementById("result-message").innerText = message;
+        // }
 
         // Funktion um zur Startseite weiterzuleiten, falls das Quiz nicht bestanden wurde
-        function redirectToHomePage() {
-          window.location.href = "index.html";
-        }
+        //  function redirectToHomePage() {
+        //    window.location.href = "index.html";
+        //   }
 
         const menuButton = document.getElementById("menu-button");
         const sidebar = document.getElementById("sidebar");
