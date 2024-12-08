@@ -21,7 +21,7 @@ header {
   position: fixed;
   width: 100%;
   top: 0;
-  z-index: 10;
+  z-index: 1000; /* Stellt sicher, dass der Header immer oben bleibt */
   height: 60px;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
 }
