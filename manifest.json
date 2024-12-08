@@ -3,8 +3,8 @@
     "short_name": "Library",
     "start_url": "https://zeroxd05.github.io/islamic_library/index.html",
     "display": "standalone",
-    "background_color": "#003366",
-    "theme_color": "#003366",
+    "background_color": "#003366cb",
+    "theme_color": "#003366cb",
     "icons": [
       {
         "src": "icon.png",
