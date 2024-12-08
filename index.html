@@ -18,6 +18,9 @@
     <!-- Header mit Navigation -->
     <header id="header">
       <div id="logo">Islamic Library</div>
+      <button id="menu-button">
+        <i class="bx bx-menu"></i>
+      </button>
       <div id="categories">
         <a href="index.html">Islam</a>
         <a href="hadith.html">Hadith</a>
@@ -27,10 +30,25 @@
         <a href="#" id="quiz-lock" onclick="openQuiz()">🔒</a>
       </div>
     </header>
+
+    <!-- Button zum Öffnen der Sidebar -->
+    <button id="sidebar-toggle">Kategorien</button>
+
+    <!-- Sidebar -->
+    <div id="sidebar">
+      <h2>Kategorien</h2>
+      <a href="#säulen-section">Säulen</a>
+      <a href="#iman-section">Iman</a>
+      <a href="#ihsan-section">Ihsan</a>
+      <a href="#propheten-section">Propheten</a>
+      <a href="#tauhid-section">Tauhid</a>
+      <a href="#bücher-section">Bücher</a>
+    </div>
+
     <div class="content">
       <h2>Grundlagen des Islam</h2>
       <p>Eine Einführung in die fundamentalen Prinzipien des Islam.</p>
-
+      <div id="säulen-section"></div>
       <!-- Canvas: Säulen des Islam -->
       <div class="canvas-container" style="margin-top: 5vh">
         <h1>Die Säulen des Islam</h1>
@@ -54,6 +72,8 @@
       </div>
 
       <!-- Canvas: Iman -->
+      <div id="iman-section"></div>
+
       <div class="canvas-container">
         <h1>Iman (Glaube)</h1>
         <p>
@@ -63,6 +83,8 @@
       </div>
 
       <!-- Canvas: Ihsan -->
+      <div id="ihsan-section"></div>
+
       <div class="canvas-container">
         <h1>Ihsan (Exzellenz)</h1>
         <p>
@@ -72,6 +94,8 @@
       </div>
 
       <!-- Canvas: Propheten -->
+      <div id="propheten-section"></div>
+
       <div class="canvas-container">
         <h1>Die Propheten</h1>
         <h4>
@@ -115,6 +139,8 @@
       </div>
 
       <!-- Canvas: Tauhid -->
+      <div id="tauhid-section"></div>
+
       <div class="canvas-container">
         <h1>Tauhid (Einheit Allahs)</h1>
         <p>
@@ -124,6 +150,8 @@
       </div>
 
       <!-- Canvas: Bücher -->
+      <div id="bücher-section"></div>
+
       <div class="canvas-container">
         <h1>Nützliche Bücher</h1>
         <h3>Ließt Bücher immer mit Lehrer oder Videos!</h3>
@@ -265,6 +293,24 @@
         function redirectToHomePage() {
           window.location.href = "index.html";
         }
+
+        const menuButton = document.getElementById("menu-button");
+        const sidebar = document.getElementById("sidebar");
+
+        menuButton.addEventListener("click", () => {
+          sidebar.style.left = sidebar.style.left === "0px" ? "-250px" : "0px";
+        });
+
+        document.querySelectorAll("#sidebar a").forEach((link) => {
+          link.addEventListener("click", (e) => {
+            e.preventDefault();
+            const targetId = link.getAttribute("href").substring(1);
+            document.getElementById(targetId).scrollIntoView({
+              behavior: "smooth",
+            });
+            sidebar.style.left = "-250px";
+          });
+        });
       </script>
     </div>
   </body>

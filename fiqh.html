@@ -17,7 +17,9 @@
   <body>
     <!-- Header mit Navigation -->
     <header id="header">
-      <div id="logo">Islamic Library</div>
+      <div id="logo">Islamic Library</div><button id="menu-button">
+        <i class="bx bx-menu"></i>
+      </button>
       <div id="categories">
         <a href="index.html">Islam</a>
         <a href="hadith.html">Hadith</a>
@@ -26,7 +28,15 @@
         <a href="seerah.html">Sirah</a>
       </div>
     </header>
+ <!-- Button zum Öffnen der Sidebar -->
+ <button id="sidebar-toggle">Kategorien</button>
 
+ <!-- Sidebar -->
+ <div id="sidebar">
+   <h2>Kategorien</h2>
+   <a href="#madhabs-section">Madhabs</a>
+   <a href="#beispiel-section">Beispiel</a>
+ </div>
     <!-- Fiqh Inhalt -->
     <!-- Main Content -->
     <div class="content">
@@ -40,7 +50,7 @@
       </section>
 
       <!-- Erklärung der Madhabs -->
-      <section>
+      <section id="madhabs-section">
             <!-- Abschnitt: Die 4 Madhabs -->
             <div class="canvas-container" style="color: #555; margin-top: 5vh">
               <h1>Die 4 Madhabs</h1>
@@ -74,6 +84,7 @@
               <p>Alle der Rechtschulen sind auf der Wahrheit. Sie unterscheiden sich jedoch in einigen Punkten.</p>
           </div>
   
+          <div id="beispiel-section"></div>
           <!-- Abschnitt: Beispiel für Fiqh -->
         <div class="canvas-container" style="color: #555">
           <p>
@@ -109,5 +120,24 @@
       </div>
       </div>
   </div>
+  <script>
+    const menuButton = document.getElementById("menu-button");
+    const sidebar = document.getElementById("sidebar");
+
+    menuButton.addEventListener("click", () => {
+      sidebar.style.left = sidebar.style.left === "0px" ? "-250px" : "0px";
+    });
+
+    document.querySelectorAll("#sidebar a").forEach((link) => {
+      link.addEventListener("click", (e) => {
+        e.preventDefault();
+        const targetId = link.getAttribute("href").substring(1);
+        document.getElementById(targetId).scrollIntoView({
+          behavior: "smooth",
+        });
+        sidebar.style.left = "-250px";
+      });
+    });
+  </script>
   </body>
 </html>

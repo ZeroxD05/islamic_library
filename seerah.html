@@ -17,7 +17,9 @@
   <body>
     <!-- Header mit Navigation -->
     <header id="header">
-      <div id="logo">Islamic Library</div>
+      <div id="logo">Islamic Library</div><button id="menu-button">
+        <i class="bx bx-menu"></i>
+      </button>
       <div id="categories">
         <a href="index.html">Islam</a>
         <a href="hadith.html">Hadith</a>
@@ -27,6 +29,16 @@
       </div>
     </header>
 
+
+     <!-- Button zum Öffnen der Sidebar -->
+     <button id="sidebar-toggle">Kategorien</button>
+
+     <!-- Sidebar -->
+     <div id="sidebar">
+       <h2>Kategorien</h2>
+       <a href="#station-section">Schlüsselstationen</a>
+       <a href="#badr-section">Badr</a>
+     </div>
     <!-- Seerah Inhalt -->
       <!-- Main Content -->
       <div class="content">
@@ -39,6 +51,7 @@
             von seiner Geburt bis zu seinem Tod. Sie dient als eine Quelle der Inspiration und
             Anleitung für Muslime.
         </p>
+        <div id="station-section"></div>
 
         <!-- Abschnitt: Schlüsselstationen im Leben des Propheten -->
         <div class="canvas-container" style="color: #555; margin-top: 5vh">
@@ -73,6 +86,8 @@
             </ul>
         </div>
 
+        <div id="badr-section"></div>
+
         <!-- Abschnitt: Beispiel für Seerah -->
         <div class="canvas-container" style="color: #555">
             <h1>Beispiel aus der Seerah: Die Schlacht von Badr</h1>
@@ -100,5 +115,24 @@
                 Zeiten.
             </p>
         </div>
+        <script>
+            const menuButton = document.getElementById("menu-button");
+            const sidebar = document.getElementById("sidebar");
+      
+            menuButton.addEventListener("click", () => {
+              sidebar.style.left = sidebar.style.left === "0px" ? "-250px" : "0px";
+            });
+      
+            document.querySelectorAll("#sidebar a").forEach((link) => {
+              link.addEventListener("click", (e) => {
+                e.preventDefault();
+                const targetId = link.getAttribute("href").substring(1);
+                document.getElementById(targetId).scrollIntoView({
+                  behavior: "smooth",
+                });
+                sidebar.style.left = "-250px";
+              });
+            });
+          </script>
   </body>
 </html>

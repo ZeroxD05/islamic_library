@@ -18,6 +18,9 @@
     <!-- Header mit Navigation -->
     <header id="header">
       <div id="logo">Islamic Library</div>
+      <button id="menu-button">
+        <i class="bx bx-menu"></i>
+      </button>
       <div id="categories">
         <a href="index.html">Islam</a>
         <a href="hadith.html">Hadith</a>
@@ -26,7 +29,16 @@
         <a href="seerah.html">Sirah</a>
       </div>
     </header>
+    <!-- Button zum Öffnen der Sidebar -->
+    <button id="sidebar-toggle">Kategorien</button>
 
+    <!-- Sidebar -->
+    <div id="sidebar">
+      <h2>Kategorien</h2>
+      <a href="#schulen-section">Schulen</a>
+      <a href="#athari-section">Athari</a>
+      <a href="#arsh-section">Arsh und Istawa</a>
+    </div>
     <div class="content">
       <h2>
         Aqeedah<br />
@@ -37,6 +49,7 @@
         die auf den Koran und die Sunnah basieren.
       </p>
       <!-- Canvas: Unterschiedliche Schulen der Aqeedah -->
+      <div id="schulen-section"></div>
       <div class="canvas-container" style="color: #555; margin-top: 5vh">
         <h1>Unterschiedliche Schulen der Aqeedah</h1>
         <p>
@@ -71,6 +84,8 @@
         </p>
       </div>
       <!-- Canvas: Athari Sicht -->
+      <div id="athari-section"></div>
+
       <div class="canvas-container" style="color: #555">
         <h1>Athari Sicht</h1>
         <p>
@@ -82,6 +97,8 @@
       </div>
 
       <!-- Canvas: Istawā und Arsh -->
+      <div id="arsh-section"></div>
+
       <div class="canvas-container" style="color: #555">
         <h1>Arsh und Istawā</h1>
         <p>
@@ -98,5 +115,24 @@
         </p>
       </div>
     </div>
+    <script>
+      const menuButton = document.getElementById("menu-button");
+      const sidebar = document.getElementById("sidebar");
+
+      menuButton.addEventListener("click", () => {
+        sidebar.style.left = sidebar.style.left === "0px" ? "-250px" : "0px";
+      });
+
+      document.querySelectorAll("#sidebar a").forEach((link) => {
+        link.addEventListener("click", (e) => {
+          e.preventDefault();
+          const targetId = link.getAttribute("href").substring(1);
+          document.getElementById(targetId).scrollIntoView({
+            behavior: "smooth",
+          });
+          sidebar.style.left = "-250px";
+        });
+      });
+    </script>
   </body>
 </html>
